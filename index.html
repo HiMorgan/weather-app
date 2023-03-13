@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+    <script defer src="script.js"></script>
+    <script src="weathercodes.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+    <title>Weather App</title>
+</head>
+<body>
+    <div id="map" class="map"></div>
+    <div class="data">
+        <form id="search" class="search">
+            <input id="input" class="input" type="text" placeholder="Search city or zip code" autocomplete="off">
+            <div id="results" class="results"></div>
+        </form>
+
+        <div id="current" class="current">
+            <div class="primary">
+                <span id="location" class="span-1"></span>
+                <button id="temperature" class="temperature"></button>
+                <span id="description" class="span-1"></span>
+            </div>
+            <img id="icon" class="icon-1">
+        </div>
+
+        <div id="hourly" class="hourly"></div>
+        <div id="daily" class="daily"></div>
+    </div>
+</body>
+</html>

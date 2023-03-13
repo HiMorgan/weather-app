@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+body {
+    position: relative;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+body > * {
+    position: absolute;
+    height: 100%;
+}
+
+.map {
+    z-index: -1;
+    width: 100%;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    padding: 1em;
+    box-sizing: border-box;
+    width: 30%;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 10em 1em rgba(0, 0, 0, .5) inset;
+    backdrop-filter: blur(1em);
+}
+.data > *::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+.data > *::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, .5);
+}
+.data > *::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+
+.search {
+    position: relative;
+    flex: 0 0 2em;
+}
+
+.input {
+    padding-left: 1em;
+    box-sizing: border-box;
+    width: 100%;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #bbb;
+}
+.input:focus {
+    border-bottom: 4px solid deepskyblue;
+}
+.input::placeholder {
+    color: #bbb;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    background-color: #eee;
+    border-radius: 0px 0px 1em 1em;
+    box-shadow: 4px 4px 4px black;
+    overflow: hidden;
+}
+
+.result {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1em;
+    box-sizing: border-box;
+    height: 4em;
+    background: none;
+    border: none;
+    outline: none;
+    border-top: 1px solid #bbb;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.selected-result {
+    background-color: #bbb;
+}
+
+.result-primary {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex: 1;
+    pointer-events: none;
+}
+
+.flag {
+    height: 100%;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.current {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+}
+
+.primary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.temperature {
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.hourly {
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+    flex: 2;
+    overflow-x: auto;
+}
+
+.hourly-card  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1 0 85px;
+    background-color: rgba(0, 0, 0, .25);
+}
+
+.daily {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .5em;
+    flex: 8;
+    overflow-y: auto;
+}
+
+.daily-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 0 0 119px;
+    background-color: rgba(0, 0, 0, .25);
+}
+.daily-card > * {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.span-1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.span-2 {
+    font-size: 1em;
+    color: black;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.icon-1 {
+    height: 8em;
+}
+
+.icon-2 {
+    height: 5em;
+}
+
+.display-none {
+    display: none;
+}
+
+@media screen and (max-width: 1299px) {
+    .map {
+        display: none;
+    }
+
+    .data {
+        width: 100%;
+        background-color: #333;
+        box-shadow: none;
+    }
+
+    .hourly-card {
+        flex: 1 0 50px;
+        background-color: #222;
+    }
+
+    .daily-card {
+        flex: 1;
+        background-color: #222;
+    }
+    
+    .temperature {
+        font-size: 2em;
+    }
+
+    .span-1 {
+        font-size: 1em;
+    }
+
+    .icon-1 {
+        height: 6em;
+    }
+}
